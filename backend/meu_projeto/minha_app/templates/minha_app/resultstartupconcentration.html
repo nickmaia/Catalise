@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form class="form-labels-on-top" method="post" action="#">
+  <div class="form-title-row">
+      <h1>Resultado</h1>
+  </div>
+
+  <div class="form-row">
+      <label>
+          <span>A Concentração final é: <br><br> {{ concentration }} [mol/L]</span>
+      </label>
+  </div>
+
+  
+  {% if request.META.HTTP_REFERER %}
+  <div class="form-row">
+    <button type="submit" > 
+        <a href="{{ request.META.HTTP_REFERER }}" style="color: white;" >Voltar</a>        
+    </button>
+  </div>
+{% endif %}
+
+</form>
+
+{% endblock %}

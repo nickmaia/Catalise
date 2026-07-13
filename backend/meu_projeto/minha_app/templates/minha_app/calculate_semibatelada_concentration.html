@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form class="form-labels-on-top" method="post" action="#">
+    {% csrf_token %}
+    <div class="form-title-row">
+        <h1>Reator Semi-Batelada: Concentração </h1>
+        <p>
+            <ol style="text-align: left; color: #777777;">
+              <li> Cbo: Concentração Constante </li>
+              <li> Cao: Concentração Inicial (Movimento)</li>
+              <li> Cai: Concentração dentro do reator </li>
+            </ol>
+            </p>   
+    </div>
+
+    <div class="form-row">
+        <label for="K_kinetic">
+            <span>K cinético [L/mol.min]: </span>
+            <input type="number" step="any" id="K_kinetic" name="K_kinetic">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="b_conversion">
+            <span>Cbo [mol/L]:</span>
+            <input type="number" step="any" id="b_conversion" name="b_conversion">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="a_conversion">
+            <span>Cao [mol/L]: </span>
+            <input type="number" step="any" id="a_conversion" name="a_conversion">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="ai_conversion">
+            <span>Cai [mol/L]: </span>
+            <input type="number" step="any" id="ai_conversion" name="ai_conversion">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="volume">
+            <span>Volume inicial [L]: </span>
+            <input type="number" step="any" id="volume" name="volume">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="vazao">
+            <span>Vazão inicial [L/min]: </span>
+            <input type="number" step="any" id="vazao" name="vazao">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="tempo">
+            <span>Tempo [min]: </span>
+            <input type="number" step="any" id="tempo" name="tempo">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <button  type="submit">Calcule</button>
+    </div>
+
+</form>
+
+{% endblock %}

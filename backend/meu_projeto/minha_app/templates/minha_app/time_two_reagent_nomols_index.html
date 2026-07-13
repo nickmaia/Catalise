@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form class="form-labels-on-top" method="post" action="#">
+    {% csrf_token %}
+    <div class="form-title-row">
+        <h1>Reator Batelada: Tempo</h1>
+        <p>
+            <ol style="text-align: left; color: #777777;">
+              <li> K: depende da ordem da reação escolhida pelo usuário</li>
+
+            </ol>
+            </p>   
+    </div>
+
+    <div class="form-row">
+        <label for="conversion">
+            <span>Conversão (X): </span>
+            <input type="number" step="any" id="conversion" name="conversion">
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label for="K_kinetic">
+            <span>K cinético [L^(n-1). mol^(n-1).h-1]: </span>
+            <input type="number" step="any" id="K_kinetic" name="K_kinetic">
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label for="initial_concentration">
+            <span>Cao: Concentração inicial [mol/L]: </span>
+            <input type="number" step="any" id="initial_concentration" name="initial_concentration">
+        </label>
+    </div>
+
+    <div class="form-row">
+      <label for="initial_concentration_b">
+          <span>Cbo: Concentração inicial [mol/L]: </span>
+          <input type="number" step="any" id="initial_concentration_b" name="initial_concentration_b">
+      </label>
+  </div>
+
+  <div class="form-row">
+    <label for="coef">
+        <span>(b/a): Coeficiente estequiométrico  </span>
+        <input type="number" step="any" id="coef" name="coef">
+    </label>
+</div>
+
+    <div class="form-row">
+        <button  type="submit">Calcule</button>
+    </div>
+
+</form>
+
+{% endblock %}

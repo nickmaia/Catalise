@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form class="form-labels-on-top" method="post" action="#">
+    {% csrf_token %}
+    <div class="form-title-row">
+        <h1>Reator PFR: Volume</h1>
+    </div>
+
+    <div class="form-row">
+        <label for="flow">
+            <span>Fluxo inicial [mol/L]: </span>
+            <input type="number" step="any" id="flow" name="flow">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label for="conversion">
+            <span>Conversão (X): </span>
+            <input type="number" step="any" id="conversion" name="conversion">
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label for="K_kinetic">
+            <span>K cinético [1/h]: </span>
+            <input type="number" step="any" id="K_kinetic" name="K_kinetic">
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label for="initial_concentration">
+            <span>Cao: Concentração inicial [mol/L]: </span>
+            <input type="number" step="any" id="initial_concentration" name="initial_concentration">
+        </label>
+    </div>
+
+    <div class="form-row">
+        <button  type="submit">Calcule</button>
+    </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,2 @@
+web: gunicorn --worker-tmp-dir /dev/shm meu_projeto.wsgi 
+web: python manage.py runserver 127.0.0.1:8000

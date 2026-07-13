@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<form class="form-labels-on-top" method="post" action="#">
+  <div class="form-title-row">
+      <h1>Resultado</h1>
+  </div>
+
+  <div class="form-row">
+      <label>
+          <span>Tempo necessário para atingir 99% da conversão do estado estacionário: <br><br> {{ time }} [min] </span>
+      </label>
+  </div>
+
+  
+  {% if request.META.HTTP_REFERER %}
+  <div class="form-row">
+    <button type="submit" > 
+        <a href="{{ request.META.HTTP_REFERER }}" style="color: white;" >Voltar</a>        
+    </button>
+  </div>
+{% endif %}
+
+</form>
+
+{% endblock %}
