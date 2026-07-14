@@ -1,2 +1,2 @@
-web: gunicorn --worker-tmp-dir /dev/shm meu_projeto.wsgi 
-web: python manage.py runserver 127.0.0.1:8000
+release: cd meu_projeto && python manage.py migrate --noinput
+web: cd meu_projeto && python manage.py collectstatic --noinput && gunicorn --worker-tmp-dir /dev/shm --bind 0.0.0.0:$PORT meu_projeto.wsgi
